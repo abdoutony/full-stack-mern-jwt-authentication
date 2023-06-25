@@ -14,6 +14,13 @@ Then type npm install
 
 Then type npm run dev
 
+To create a user open postman or insomnia then
+enter this url http:localhost:4000/api/auth/register
+in the request body chose json format and then past  this json object
+{
+  "email":"a@a.com",
+  "password":"123"
+}
 ### Run the frontend
 Inside the project go to client folder and then type npm install and then type npm run dev
 

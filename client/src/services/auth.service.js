@@ -1,7 +1,8 @@
 import axios from "axios";
+import { baseApiUrl } from "../config/app";
 export const login = ({ email, passwords }) => {
   axios
-    .post("http://localhost:4000/api/auth/login", { email, passwords })
+    .post(`${baseApiUrl}/auth/login`, { email, passwords })
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("token", JSON.stringify(token));

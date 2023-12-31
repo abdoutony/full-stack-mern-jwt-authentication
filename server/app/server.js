@@ -1,5 +1,5 @@
 const express = require("express");
-
+const os = require("os");
 require("dotenv").config();
 require("./config/db").connect();
 const authRoutes = require("./routes/auth");
@@ -17,12 +17,12 @@ app.use(
 app.use(bodyParser.json());
 //set cors
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "*",
 };
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send(`Hello from ${os.hostname()}`);
 });
 
 app.use("/api", authRoutes());
